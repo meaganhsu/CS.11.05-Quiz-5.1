@@ -1,4 +1,7 @@
 public class Main {
+    public static void main(String[] args) {
+
+    }
 
     /**
      * Given two arrays of integers, write a method called combine that combines the two arrays into one larger array.
@@ -8,9 +11,19 @@ public class Main {
      * zip(myArray1, myArray2) → {1,3,5,7,9,2,4,6,8,10,12,14,16}
      */
     public static int[] combine(int[] array1, int[] array2) {
+        int[] out = new int[array1.length + array2.length];
+        int n = 0;
 
-        return null;
+        for (int i: array1) {
+            out[n] = i;
+            n++;
+        }
 
+        for (int i: array2) {
+            out[n] = i;
+            n++;
+        }
+        return out;
     }
 
     /**
@@ -21,9 +34,16 @@ public class Main {
      * zip(myArray1, myArray2) → {1,2,3,4,5,6,7,8,9,10}
      */
     public static int[] zip(int[] array1, int[] array2) {
+        int[] out = new int[array1.length + array2.length];
+        int n = 0;
+        for (int i = 0; i < array2.length; i++) {
+            out[n] = array1[i];
+            n++;
+            out[n] = array2[i];
+            n++;
+        }
 
-        return null;
-
+        return out;
     }
 
     /**
@@ -34,9 +54,11 @@ public class Main {
      * product(myArray1, myArray2) → {2,12,30,56,90}
      */
     public static int[] product(int[] array1, int[] array2) {
+        int[] out = new int[array1.length];
 
-        return null;
+        for (int i = 0; i < out.length; i++) out[i] = array1[i] * array2[i];
 
+        return out;
     }
 
     /**
@@ -56,15 +78,20 @@ public class Main {
      * capitalCount(words) → {1, 2, 2, 0}
      */
     public static int[] capitalCount(String[] words) {
+        int[] out = new int[words.length];
 
-        return null;
+        for (int i = 0; i < words.length; i++) out[i] = countCapitalLetters(words[i]);
 
+        return out;
     }
 
     public static int countCapitalLetters(String word) {
+        int count = 0;
+        for (int i = 0; i < word.length(); i++){
+            if (word.charAt(i) >= 'A' && word.charAt(i) <= 'Z') count++;
+        }
 
-        return 0;
-
+        return count;
     }
 
 }
